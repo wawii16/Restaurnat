@@ -1,0 +1,431 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.skip-link {
+  position: absolute; 
+  top: -40px; 
+  left: 10px; 
+  padding: 10px; 
+  background-color: #000; 
+  color: #fff; 
+  text-decoration: none; 
+  z-index: 1000; 
+  transition: top 0.3s; 
+}
+
+.skip-link:focus {
+  top: 10px; 
+}
+
+.nav {
+  justify-content: end;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  background-color:#A79277;
+
+}
+
+.nav .logo a{
+  text-decoration: none;
+  color: red;
+  padding: 10px;
+  min-height: 44px;
+}
+
+.nav .logo{
+  font-size: 1.3em;
+  padding: 20px;
+}
+
+.nav .nav-list {
+  height: 100%;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+
+
+
+
+.nav ul a{
+  color: rgb(232, 232, 232);
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  height: 100%;
+  text-decoration: none;
+  display: flex;
+  min-height: 44px; 
+  min-width: 44px;
+}
+
+.nav ul li a:hover{
+  border: 1px solid black;
+}
+
+.nav > a {
+  align-self: center;
+  text-align: center;
+  max-height: 44px; 
+  min-width: 44px;
+  text-decoration: none;
+  display: none;
+  margin-right: 30px;
+  justify-self: end;
+  align-content: center;
+}
+
+.hero {
+
+  margin-bottom: 10px;
+
+  align-items: center;
+  text-align: center;
+  display: grid;
+  background-color: #D1BB9E;
+
+}
+
+
+.hero img {
+  width: 1000px;
+  height: 400px;
+  object-fit: cover;
+  object-position: 0% 0%;
+  
+}
+
+.hero .intro {
+  padding: 10px;
+  align-content: center;
+  height: 100%;
+}
+
+.daftar-restaurant {
+  margin: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: center;
+  margin-top: 20px;
+  gap: 30px;
+
+}
+
+.daftar-restaurant .restaurant img {
+  margin-top: 10px;
+  max-width: 100%; /* Gambar tidak lebih lebar dari pembungkus */
+  height: auto; /* Jaga aspek rasio */
+  object-fit: cover; /* Memotong gambar agar sesuai pembungkus */
+}
+
+
+
+.restaurant {
+  background-color: #FFF2E1;
+  border-radius: 5px;
+  padding: 20px;
+  border: 1px solid black;
+
+}
+
+.restaurant a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  text-align: center;
+  text-decoration: none; /* Hilangkan underline jika diperlukan */
+  padding: 0 10px; /* Sesuaikan padding horizontal jika diperlukan */
+  box-sizing: border-box; /* Sertakan padding dan border dalam dimensi elemen */
+  text-decoration: none;
+  color: #000;
+}
+
+.daftar-restaurant .description {
+  font-weight: 400;
+  font-size: 0.8em;
+}
+
+.daftar-restaurant p {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+}
+
+/* detail resto */
+
+.title {
+  margin-top: 20px;
+  text-align: center;
+  
+}
+
+.resto {
+  margin-top: 10px;
+  background-color: #FFF2E1;
+  border-radius: 5px;
+  padding: 20px;
+  border: 1px solid black;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px 16px;
+}
+
+
+ 
+.resto .resto_poster {
+  width: 100%;
+  max-width: 400px;
+}
+ 
+.resto .resto_info h4 {
+  margin: 8px 0;
+}
+
+.resto .daftar-menu ul li{
+  margin-bottom: 8px;
+  list-style-type: none;
+}
+
+.resto h3 {
+  margin: 10px 0;
+}
+
+.resto .customer_reviews h4,
+.resto .customer_reviews p
+{
+  margin-bottom: 10px;
+}
+
+.resto img {
+  border: 1px solid black;
+  max-width: 100%;
+}
+
+
+.like {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #db0000;
+  
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  border-radius: 50%;
+  border: 0;
+  
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Styles for the loading indicator */
+#loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 1000; /* Ensure it is on top of other elements */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for the error message */
+#error {
+  text-align: center;
+  color: red;
+  font-size: 1.2em;
+  margin-top: 20px;
+  display: none; /* Initially hidden */
+}
+
+
+
+
+@media screen and (max-width: 800px) {
+
+  #drawer {
+    justify-content: center;
+    display: none;
+    width: 150px;
+    height: 180px;
+    top: 63px;
+    position: absolute;
+    right: 0;
+    background-color: #D1BB9E;   
+    /* menyembunyikan #drawer -250px (sesuai dengan ukuran lebar drawer) ke kiri */
+    transform: translate(250px, 0);
+
+  }
+
+  #drawer.open {
+    width: 30%;
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    transform: translate(0,0)
+  }
+
+  #drawer ul {
+    display: grid;
+    list-style-type: none;
+    padding: 0 16px;
+    grid-template-rows: 60px 60px 60px;
+  }
+
+
+
+  
+  
+  #drawer a {
+    width: 100%;
+
+
+    text-decoration: none;
+    font-size: 1em;
+    color: white;
+  }
+
+
+
+  
+  .nav > a{
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    height: 100%;
+
+  }
+
+  .daftar-restaurant {
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+    margin-top: 20px;
+
+    gap: 20px;
+
+  }
+
+  .hero img {
+    height: 50%;
+    width: 50%;
+  }
+
+
+
+}
+
+
+@media screen and (max-width: 1200px) {
+
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: start;
+  }
+  .hero img {
+    width: 100%;
+  }
+
+
+  
+}
+
+
+
+
+
+@media screen and (min-width: 800px) {
+
+
+  .daftar-restaurant {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: 1.25em;
+  
+  }
+
+  header {
+    font-size: 1.25em;
+  }
+
+  nav {
+    font-size: 1em;
+  }
+
+
+
+  .resto .daftar-menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+
+
+  
+
+
+
+   
+
+  .resto {
+    grid-template-columns: auto 1fr;
+  }
+ 
+  .resto .resto_title {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+ 
+  .resto .resto_description {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  
+}
+@media screen and (min-width: 1200px) {
+
+  .daftar-restaurant {
+
+    grid-template-columns: 1fr 1fr 1fr;
+    font-size: 1.5em;
+  
+  }
+
+  header {
+    font-size: 1.5em;
+  }
+
+  nav {
+    font-size: 1.2em;
+  }
+
+
+ 
+}
